@@ -17,6 +17,14 @@ import {
 const isAndroid = Platform.OS == "android";
 const viewPadding = 10;
 
+const scheme = Platform.select({ android: 'geo:0,0?q=' });
+const latLng = `${33.753497599999996},${-84.3907072}`;
+const label = 'Your location is';
+const url = Platform.select({
+  android: `${scheme}${latLng}(${label})`
+});
+// console.log('url is',url);
+
 export default class TodoList extends Component {
   state = {
     tasks: [],
@@ -90,7 +98,7 @@ export default class TodoList extends Component {
               <View style={styles.hr} />
             </View>}
         />
-        <TouchableOpacity onPress={() => Linking.openURL(`google.navigation:q=${33.753497599999996}+${-84.3907072}`)}>
+        <TouchableOpacity onPress={() => Linking.openURL(url)}>
         <Text>Click for Google map</Text>
         </TouchableOpacity>
         <TextInput
