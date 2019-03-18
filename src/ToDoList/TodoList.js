@@ -23,7 +23,6 @@ const label = 'Your location is';
 const url = Platform.select({
   android: `${scheme}${latLng}(${label})`
 });
-// console.log('url is',url);
 
 export default class TodoList extends Component {
   state = {

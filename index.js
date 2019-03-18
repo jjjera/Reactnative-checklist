@@ -1,10 +1,6 @@
-/**
- * @format
- */
-
 import {AppRegistry} from 'react-native';
 // import App from './App';
-import TodoList from './src/ToDoList';
 import {name as appName} from './app.json';
+import TodoList from './src/ToDoList';
 
-AppRegistry.registerComponent(appName, () => TodoList);
+AppRegistry.registerComponent('appName', () => TodoList);
